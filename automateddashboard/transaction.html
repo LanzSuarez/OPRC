@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Batangas Parking</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 80%;
+      max-width: 800px;
+      background-image: url('/img/Screenshot\ 2024-09-05\ 233214.png'); 
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: #800000; /* Maroon color */
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .header-top .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-top .logo img {
+      width: auto;
+      height: 50px;
+    }
+
+    .header-top .search {
+      position: relative;
+      margin-left: -100px; /* placement */
+    }
+
+    .header-top .search input {
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    .header-top .search button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .header-top .search button img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .header-top .settings {
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 5px;
+      cursor: pointer;
+      height: 40px; /* Match the height of the search input */
+      display: flex;
+      align-items: center; /* Center icon vertically */
+      justify-content: center; /* Center icon horizontally */
+    }
+
+    .header-top .settings img {
+      width: 20px;
+      height: 20px;
+      padding: 10px;
+    }
+
+    .header-bottom {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .header-bottom ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-bottom li {
+      margin-left: 20px;
+    }
+
+    .header-bottom a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .left-column {
+      width: 15%;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      z-index: 1;
+    }
+
+    .left-column .navigation-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 90px;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background-color: #800000; /* Maroon color */
+      cursor: pointer;
+      z-index: 1;
+      margin-top: -100px;
+      margin-left: -10px;
+    }
+
+    .left-column .navigation-button img {
+      width: auto;
+      height: 50px;
+    }
+
+    .right-column {
+      width: 60%;
+      height: 40%;
+      padding: 10px;
+      margin-top: 80px;
+      margin-left: 20px;
+      background-color: #f5e0a0; /* Gold color */
+      border-radius: 10px;
+      margin-right: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      z-index: 1;
+    }
+
+    .right-column .navigation-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+      height: 80px;
+      border-radius: 20px;
+      background-color: #800000; /* Maroon color */
+      margin: 10px auto;
+      cursor: pointer;
+    }
+
+    .right-column .navigation-button img {
+      width: auto;
+      height: 50px;
+    }
+
+    .button {
+      background-color: #800000; /* Maroon color */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0; /* Space between buttons */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #6c0000; /* Darker maroon on hover */
+    }
+
+    /* Back Button */
+    .back-button {
+            background-color: #800000; /* Maroon color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Space above button */
+            align-self: flex-end; /* Align button to the right */
+            float: right; /* Center
+        }
+
+        .back-button:hover {
+            background-color: #600000; /* Darker maroon on hover */
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="header-top">
+          <div class="logo">
+            <img src="/img/school_logo.png" alt="University of Batangas Logo">
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>
+              <img src="/img/search.png" alt="Search Icon">
+            </button>
+          </div>
+          <div class="settings">
+            <img src="/img/settings.png" alt="Settings Icon" alt="Settings Icon" onclick="window.location.href='/setting.html'">
+          </div>
+        </div>
+        <div class="header-bottom">
+          <ul>
+            <li><a href="/account.html">Account</a></li>
+            <li><a href="/home.html">Batangas City</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="left-column">
+          <div class="navigation-button">
+            <img src="https://cdn-icons-png.flaticon.com/128/3602/3602123.png" alt="Navigation Button 1 Icon">
+            <h3>Notifications</h3>
+          </div>
+        </div>
+        <div class="right-column">
+          <div class="navigation-button">
+        </div>
+      </div>
+      </div>
+      <button class="back-button" onclick="window.location.href='/automateddashboard/sticker-management.html'">Back</button>
+    </div>
+  </div>
+</body>
+</html>

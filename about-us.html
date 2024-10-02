@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Batangas Parking</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: #800000; /* Maroon color */
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .header-top .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-top .logo img {
+      width: auto;
+      height: 50px;
+    }
+
+    .header-top .search {
+      position: relative;
+      margin-left: -100px; /* placement */
+    }
+
+    .header-top .search input {
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    .header-top .search button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .header-top .search button img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .header-top .settings {
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 5px;
+      cursor: pointer;
+      height: 40px; /* Match the height of the search input */
+      display: flex;
+      align-items: center; /* Center icon vertically */
+      justify-content: center; /* Center icon horizontally */
+    }
+
+    .header-top .settings img {
+      width: 20px;
+      height: 20px;
+      padding: 10px;
+    }
+
+    .header-bottom {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .header-bottom ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-bottom li {
+      margin-left: 20px;
+    }
+
+    .header-bottom a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .image-container img {
+      margin-top: 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .back-button {
+            background-color: #800000; /* Maroon color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Space above button */
+            float: right;
+    }
+
+    .back-button:hover {
+            background-color: #600000; /* Darker maroon on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="header-top">
+          <div class="logo">
+            <img src="/img/school_logo.png" alt="University of Batangas Logo">
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>
+              <img src="/img/search.png" alt="Search Icon">
+            </button>
+          </div>
+          <div class="settings">
+            <img src="/img/settings.png" alt="Settings Icon" alt="Settings Icon" onclick="window.location.href='/setting.html'">
+          </div>
+        </div>
+        <div class="header-bottom">
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Batangas City</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="https://ub.edu.ph/ublc/wp-content/uploads/2023/08/UBBC-scaled.jpg" alt="University of Batangas">
+      </div>
+      <div class="content">
+        <h1>Welcome to the University of Batangas Parking Solutions Page!</h1>
+        <p>At the University of Batangas, we understand that efficient parking is a vital aspect of campus life, especially for those commuting by car or motorcycle. Our mission is to address the ongoing parking challenges faced by our university community—students, staff, and faculty alike—by providing clear information and advocating for improved parking solutions.</p>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </div>
+  </div>
+    <script>
+          // Add your JavaScript code here
+          function goBack() {
+            // Add your navigation logic here (e.g., history.back())
+            window.location.href = "/home.html";
+        }
+        </script>
+</body>
+</html>

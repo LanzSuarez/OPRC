@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Batangas Parking</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      max-width: 800px;
+      background-image: url('/img/Screenshot\ 2024-09-05\ 233214.png'); 
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: #800000; /* Maroon color */
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .header-top .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-top .logo img {
+      width: auto;
+      height: 50px;
+    }
+
+    .header-top .search {
+      position: relative;
+      margin-left: -100px; /*placement*/
+    }
+
+    .header-top .search input {
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    .header-top .search button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .header-top .search button img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .header-top .settings {
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 5px;
+      cursor: pointer;
+      height: 40px; /* Match the height of the search input */
+      display: flex;
+      align-items: center; /* Center icon vertically */
+      justify-content: center; /* Center icon horizontally */
+    }
+
+    .header-top .settings img {
+      width: 20px;
+      height: 20px;
+      padding: 10px;
+    }
+
+    .header-bottom {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .header-bottom ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-bottom li {
+      margin-left: 20px;
+    }
+
+    .header-bottom a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+
+    /* Main Content Styles */
+    .main-content {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 150px;
+      background-color: #800000; /* Maroon color */
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .left-column .navigation-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      background-color: #800000;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease; /* Add transition for smooth effect */
+      border-radius: 10px;
+      margin: 10px 0;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .left-column .navigation-button img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 5px;
+    }
+
+    .left-column .navigation-button h2 {
+      font-size: 14px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    
+    .left-column .navigation-button.active {
+      background-color: #f0f0f0; /* Light up effect */
+      color: #800000; /* Change text color */
+      border: 2px solid #800000; 
+      flex-grow: 1; /* Expand button width */
+      transform: scale(1.05); /* Slightly scale up the button */
+    }
+
+    .right-column {
+      flex-grow: 2; /* Allow the right column to expand */
+      padding: 20px;
+      background-color: #fff;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="header-top">
+          <div class="logo">
+            <img src="/img/school_logo.png" alt="University of Batangas Logo">
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>
+              <img src="/img/search.png" alt="Search Icon">
+            </button>
+          </div>
+          <div class="settings">
+            <img src="/img/settings.png" alt="Settings Icon">
+          </div>
+        </div>
+        <div class="header-bottom">
+          <ul>
+            <li><a href="/account.html">Account</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="left-column">
+          <div class="navigation-button" data-target="section1">
+            <img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="Icon 1">
+            <h2>My Account</h2>
+          </div>
+          <div class="navigation-button" data-target="section2">
+            <img src="https://cdn-icons-png.flaticon.com/128/7611/7611949.png" alt="Icon 2">
+            <h2>Track My Vehicle</h2>
+          </div>
+          <div class="navigation-button" data-target="section3">
+            <img src="https://cdn-icons-png.flaticon.com/128/8162/8162959.png" alt="Icon 3">
+            <h2>Notifications</h2>
+          </div>
+          <div class="navigation-button" data-target="section4">
+            <img src="https://cdn-icons-png.flaticon.com/128/6322/6322390.png" alt="Icon 4">
+            <h2>Preferences</h2>
+          </div>
+        </div>
+        <div class="right-column">
+          <div id="section1" class="section active">
+            <h2>My Account</h2>
+            <p>Content for Section 1.</p>
+          </div>
+          <div id="section2" class="section" style="display:none;">
+            <h2>Track My Vehicle</h2>
+            <p>Content for Section 2.</p>
+          </div>
+          <div id="section3" class="section" style="display:none;">
+            <h2>Notifications</h2>
+            <p>Content for Section 3.</p>
+          </div>
+          <div id="section4" class="section" style="display:none;">
+            <h2>Preferences</h2>
+            <p>Content for Section 4.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll('.navigation-button');
+    const sections = document.querySelectorAll('.section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        sections.forEach(section => section.style.display = 'none');
+        document.getElementById(button.getAttribute('data-target')).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

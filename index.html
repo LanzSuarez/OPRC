@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Instrument+Sans&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Login Page</title>
+    <style>
+        /* Your existing CSS styles go here */
+        /* Universal styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container for image and login form */
+        .container {
+            display: flex;
+            width: 75%;
+            height: 80%;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        /* Left side: Image section */
+        .image-section {
+            flex: 2;
+            background: url("/img/Screenshot\ 2024-09-05\ 233214.png") no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Right side: Login form section */
+        form {
+            flex: 0.7;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgb(91, 2, 2);
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            position: absolute;
+            height: 250px;
+            width: auto;
+            top: 0;
+            left: 50%;
+            transform: translate(-40%, -50%);
+            z-index: -1;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        input {
+            padding: 12px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            font-size: 16px;
+            background-color: rgb(255, 93, 34);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .options label{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: small;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .btn {
+            padding: 10px;
+            background-color: rgb(255, 93, 34);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+        }
+
+        form > button {
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background-color: rgb(252, 109, 57);
+        }
+
+        .link {
+            margin-top: -10px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px;
+            color: #ffffff;
+            font-size: small;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: small;
+        }
+
+        a:hover {
+            color: rgb(252, 109, 57);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left side image section -->
+        <div class="image-section">
+            <!-- School Logo -->
+            <img src="/img/school_logo.png" alt="School Logo" class="logo">
+        </div>
+
+        <!-- Right side login form -->
+        <form id="loginForm">
+            <header>
+                <!-- Form Logo -->
+                <img src="/img/logo.png" alt="Form Logo" class="logo">
+            </header>
+            <div class="input-group">
+                <label for="userid">User ID</label>
+                <input type="text" id="userid" name="userid" required maxlength="7">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="options">
+                <label><input type="checkbox" name="remember" style="font-size: small;"> Remember Me</label>
+                <a href="#">Forgot Password</a>
+            </div>
+            <div class="divider">Or</div>
+            <!-- Sign in with UB Mail -->
+            <button type="button" class="btn icon-btn" onclick="window.location.href='https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?access_type=offline&client_id=170378334818-t4d52rubp1c9nchrt4iaqtmihestagfu.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fwww.neolms.com%2Fauth%2Fgoogle_oauth2%2Fcallback&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&state=ub.edu.ph&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow'">
+                <img src="/img/gmail.png" alt="UB Mail Icon" style="vertical-align: middle; height: 15px;">
+                Sign In Using UB Mail
+            </button>
+            <button type="submit" class="btn">Log In</button>
+            <div class="link">
+                <p>No Account? <a href="/create.html">Create One</a></p>
+                <p>Employee? <a href="/create.html">Click Here</a></p>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const username = document.getElementById('userid').value;
+            const password = document.getElementById('password').value;
+            
+            if (username && password) {
+                // Save username to local storage
+                localStorage.setItem('username', username);
+                // Redirect to the Home page
+                window.location.href = 'Home.html';
+            } else {
+                alert('Please enter both username and password.');
+            }
+        });
+    </script>
+</body>
+</html>
